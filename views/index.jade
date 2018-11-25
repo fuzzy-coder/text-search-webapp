@@ -1,0 +1,29 @@
+extends layout
+
+block header
+  link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css', rel='stylesheet')
+  link(href='/stylesheets/style.css', rel='stylesheet')
+  script(src='//code.jquery.com/jquery-1.11.1.min.js')
+  script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js')
+  script(src='/javascripts/search.js')
+
+block content
+  .container
+    .row
+      .col-sm-6.col-sm-offset-3
+        #imaginary_container
+          .input-group.stylish-input-group
+            input.form-control(type='text', placeholder='Search', maxlength=10, onkeypress="enterSearch(event)")#search-input
+            span.input-group-addon
+              button(type='button', onclick='search()')
+                span.glyphicon.glyphicon-search
+  .container
+    .row
+      table.table
+        thead
+          tr
+            th(scope='col') Score
+            th(scope='col') Name
+        tbody#table-body
+          
+
